@@ -4,6 +4,9 @@ import sys
 SYSCFG = 'share/drun/drunrc'
 USRCFG = '~/.drunrc'
 
+DMENU = 0
+COMMANDS = 1
+
 def prefix(relpath):
     return os.path.join(os.path.dirname(sys.path[0]), relpath)
 

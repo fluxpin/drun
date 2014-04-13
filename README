@@ -5,12 +5,26 @@ using shell syntax.
 **Configuration**
 
 A per-user configuration file (~/.drunrc) is created by copying the example
-configuration file when the program is first run. There is currently one
-option.
+configuration file when the program is first run. There are currently two
+options.
 
     dmenu
 
         The dmenu command, including any arguments.
+
+    commands
+
+        A list of special commands and their definitions. The first element
+        of each two-tuple is a Python regular expression, the second is a
+        command.
+
+        Commands are matched against each regular expression before they
+        are parsed or executed. If a match is found, the original command
+        is replaced with a new command from the corresponding tuple. Any
+        text of the form {#} in the new command is replaced with part of
+        the match, where {0} refers to the entire match (which may not be
+        the entire original command) and {1} through {N} refer to regular
+        expression groups if any exist.
 
 **Building**
 
