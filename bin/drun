@@ -1,0 +1,18 @@
+#!/usr/bin/python -tt
+
+from drun.cfg import init_cfg
+from drun.cmd import read_cmd, run
+from drun.menu import format_menu, list_path
+
+def main():
+    cfg = init_cfg()
+    menu = format_menu(list_path())
+    for cmd in read_cmd(cfg, menu):
+        try:
+            run(cmd)
+            break
+        except (IndexError, OSError, ValueError): # null or invalid
+            pass
+
+if __name__ == '__main__':
+    main()

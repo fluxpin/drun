@@ -1,0 +1,19 @@
+A program launcher for xmonad and other stand-alone window managers. It
+lists the contents of the user's $PATH (through dmenu) and parses commands
+using shell syntax.
+
+**Configuration**
+
+A per-user configuration file (~/.drunrc) is created by copying the example
+configuration file when the program is first run. There is currently one
+option.
+
+    dmenu
+
+        The dmenu command, including any arguments.
+
+**Building**
+
+You need dmenu to use this.
+
+The program can be installed with the included distutils script.
