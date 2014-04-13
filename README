@@ -5,12 +5,20 @@ using shell syntax.
 **Configuration**
 
 A per-user configuration file (~/.drunrc) is created by copying the example
-configuration file when the program is first run. There are currently two
+configuration file when the program is first run. There are currently three
 options.
 
     dmenu
 
         The dmenu command, including any arguments.
+
+    menus
+
+        A list of user-defined menus. The head of each sublist is the name
+        of a menu, the tail is the menu itself. Menus are displayed at the
+        beginning of the main menu.
+
+        Press Return to open a menu, ESC to close it.
 
     commands
 

@@ -1,4 +1,7 @@
 ['dmenu -i',
+ [['Office', 'emacs', 'libreoffice'],
+  ['Games', 'bastion', 'minecraft', 'spacechem']],
  [[r'!(.+)', 'xterm -e {1}'],
   [r'@(.+)', '!man {1}'],
-  [r'w!(.+)', 'firefox "http://www.wikipedia.org/wiki/{1}"']]]
+  [r'w!(.+)', 'firefox "http://www.wikipedia.org/wiki/{1}"'],
+  [r'emacs( .+)?$', '!{0}']]]

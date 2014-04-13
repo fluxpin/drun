@@ -1,9 +1,16 @@
 import contextlib as ctx
 import itertools as it
+import operator as op
 import os
 
-def format_menu(*entries):
-    return '\n'.join(it.chain(*entries)) + '\n'
+from drun.cfg import MENUS
+
+def format_menu(menu, *entries):
+    menu.append('\n'.join(it.chain(*entries)) + '\n')
+    return menu
+
+def list_menus(cfg):
+    return it.imap(op.itemgetter(0), cfg[MENUS])
 
 @ctx.contextmanager
 def working_dir(path):

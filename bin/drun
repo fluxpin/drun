@@ -2,11 +2,11 @@
 
 from drun.cfg import init_cfg
 from drun.cmd import read_cmd, run, special_cmd
-from drun.menu import format_menu, list_path
+from drun.menu import format_menu, list_menus, list_path
 
 def main():
     cfg = init_cfg()
-    menu = format_menu(list_path())
+    menu = format_menu([], list_menus(cfg), list_path())
     for cmd in read_cmd(cfg, menu):
         try:
             run(special_cmd(cfg, cmd))
